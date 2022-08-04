@@ -33,7 +33,6 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-
   # FactoryBot
   config.include FactoryBot::Syntax::Methods
 
