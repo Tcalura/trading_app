@@ -5,11 +5,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.0'
 
+gem 'active_model_serializers'
 gem 'bootsnap', require: false
 gem 'jbuilder'
 gem 'pg'
 gem 'puma'
 gem 'rails', '~> 7.0.3'
+gem 'service_actor', '~> 3.3'
+gem 'service_actor-rails', '~> 1.0'
 gem 'tzinfo-data'
 
 group :development, :test do
