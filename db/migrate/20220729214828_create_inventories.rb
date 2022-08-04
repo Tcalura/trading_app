@@ -3,7 +3,7 @@ class CreateInventories < ActiveRecord::Migration[7.0]
     create_table :inventories do |t|
       t.references :user, null: false, foreign_key: true
       t.references :device, null: false, foreign_key: true
-      t.integer :quantity
+      t.integer :quantity, default: 1
 
       t.timestamps
     end
