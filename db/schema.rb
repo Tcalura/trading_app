@@ -15,14 +15,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_214828) do
   enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "devices", force: :cascade do |t|
-    t.string "name"
-    t.decimal "price"
+    t.string "name", null: false
+    t.decimal "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_214828) do
   create_table "inventories", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "device_id", null: false
-    t.integer "quantity"
+    t.integer "quantity", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["device_id"], name: "index_inventories_on_device_id"
@@ -38,11 +38,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_214828) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "user_name"
-    t.string "email"
-    t.date "birthdate"
-    t.boolean "vacation"
+    t.string "name", null: false
+    t.string "user_name", null: false
+    t.string "email", null: false
+    t.date "birthdate", null: false
+    t.boolean "vacation", null: false
     t.bigint "country_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
